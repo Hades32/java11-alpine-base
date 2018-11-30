@@ -9,4 +9,6 @@ RUN jlink \
     --output /opt/jdk-11-minimal
 
 FROM alpine:3.8
+ENV JAVA_HOME=/opt/jdk-11-minimal
+ENV PATH=$PATH:/opt/jdk-11-minimal/bin
 COPY --from=jdk /opt/jdk-11-minimal /opt/jdk-11-minimal
